@@ -1,0 +1,15 @@
+<odoo>
+    <!-- Top menu item -->
+  <menuitem name="upoElectro" id="main_upoelectro_menu" groups="group_upoelectro_manager"/>
+
+  <!-- menu categories -->
+  <menuitem name="upoElectro" id="upoelectro_menu" groups="group_upoelectro_manager" parent="main_upoelectro_menu"/>
+
+  <!-- actions -->
+  <menuitem name="Clientes" id="clientes_menu" parent="upoelectro_menu" groups="group_upoelectro_manager" action="clientes_list_action"/>
+  <menuitem name="Pagos" id="pagos_menu" parent="upoelectro_menu" groups="group_upoelectro_manager" action="pagos_list_action"/>
+  <menuitem name="Pedidos" id="pedidos_menu" parent="upoelectro_menu" groups="group_upoelectro_manager" action="pedidos_list_action"/>
+  <menuitem name="Articulos" id="articulos_menu" parent="upoelectro_menu" groups="group_upoelectro_manager" action="articulos_list_action"/>
+  <menuitem name="Cuentas" id="cuentas_menu" parent="upoelectro_menu" groups="group_upoelectro_manager" action="cuentas_list_action"/>
+  <menuitem name="Almacenes" id="almacenes_menu" parent="upoelectro_menu" groups="group_upoelectro_manager" action="almacenes_list_action"/>
+</odoo>

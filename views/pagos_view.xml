@@ -1,0 +1,38 @@
+<odoo>
+    <record id="upoelectro_pagos_form_view" model="ir.ui.view">
+        <field name="name">upoelectro.pagos.form</field>
+        <field name="model">upoelectro.pagos</field>
+        <field name="arch" type="xml">
+            <form string="Pagos">
+                <sheet layout="auto">
+                    <group>
+                        <field name="fecha"/>
+                        <field name="cantidad"/>
+                        <field name="pedido_id" widget="Many2one"/> 
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="upoelectro_pagos_tree_view" model="ir.ui.view">
+        <field name="name">upoelectro.pagos.tree</field>
+        <field name="model">upoelectro.pagos</field>
+        <field name="arch" type="xml">
+            <tree string="tree_string"> 
+                <field name="fecha"/>
+                <field name="cantidad"/>
+                <field name="pedido_id" widget="Many2one"/>               
+            </tree>
+        </field>
+    </record>
+
+    <record id="pagos_list_action" model="ir.actions.act_window">
+        <field name="name">Pagos</field>
+        <field name="res_model">upoelectro.pagos</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Crea un nuevo pago</p>
+        </field>
+    </record>
+</odoo>

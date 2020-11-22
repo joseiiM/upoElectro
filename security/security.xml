@@ -1,0 +1,5 @@
+<odoo>
+    <record id="group_upoelectro_manager" model="res.groups">
+        <field name="name">upoelectro / Manager</field>
+    </record>
+</odoo>

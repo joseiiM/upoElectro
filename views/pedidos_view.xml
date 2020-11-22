@@ -1,0 +1,68 @@
+<odoo>
+    <record id="upoelectro_pedidos_form_view" model="ir.ui.view">
+        <field name="name">upoelectro.pedidos.form</field>
+        <field name="model">upoelectro.pedidos</field>
+        <field name="arch" type="xml">
+            <form string="Pedidos">
+                <sheet layout="auto">
+                    <notebook>
+                        <page name="datos_pedido" string="Datos del pedido">
+                            <group>
+                                <field name="fechaPedido"/>
+                                <field name="cantidadTotal"/>
+                                <field name="pagado"/>
+                            </group>
+                        </page>
+                        <page name="datos_pago" string="Pagos">
+                            <group>
+                                <field name="pagos_ids" widget="One2many"/>
+                            </group>
+                        </page>
+                        <page name="datos_cliente" string="Cliente">
+                            <group>
+                                <field name="cliente_id" widget="Many2one"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="upoelectro_pedidos_tree_view" model="ir.ui.view">
+        <field name="name">upoelectro.pedidos.tree</field>
+        <field name="model">upoelectro.pedidos</field>
+        <field name="arch" type="xml">
+            <tree string="tree_string"> 
+                <field name="fechaPedido"/>
+                <field name="cantidadTotal"/>
+                <field name="pagado"/>     
+                <field name="cliente_id" widget="Many2one"/>          
+            </tree>
+        </field>
+    </record>
+
+    <record id="upoelectro_pedidos_search_view" model="ir.ui.view">
+        <field name="name">upoelectro.pedidos.search</field>
+        <field name="model">upoelectro.pedidos</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="search_pagado" string="Pedidos pagados" domain="[('pagado','=',True)]"/>
+                <separator orientation="horizontal"/>
+                <group expand="0" string="Agrupar por...">
+                    <filter name="group_by_cliente" string="Cliente" context="{'group_by':'cliente_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="pedidos_list_action" model="ir.actions.act_window">
+        <field name="name">Pedidos</field>
+        <field name="res_model">upoelectro.pedidos</field>
+        <field name="search_view_id" ref="upoelectro_pedidos_search_view"/>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Crea un nuevo pedido</p>
+        </field>
+    </record>
+</odoo>

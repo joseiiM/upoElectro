@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+clientes_manager,clientes_manager,model_upoelectro_clientes,group_upoelectro_manager,1,1,1,1
+pagos_manager,pagos_manager,model_upoelectro_pagos,group_upoelectro_manager,1,1,1,1
+pedidos_manager,pedidos_manager,model_upoelectro_pedidos,group_upoelectro_manager,1,1,1,1
+almacenes_manager,almacenes_manager,model_upoelectro_almacenes,group_upoelectro_manager,1,1,1,1
+articulos_manager,articulos_manager,model_upoelectro_articulos,group_upoelectro_manager,1,1,1,1

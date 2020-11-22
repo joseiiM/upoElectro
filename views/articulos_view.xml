@@ -1,0 +1,49 @@
+<odoo>
+    <record id="upoelectro_articulos_form_view" model="ir.ui.view">
+        <field name="name">upoelectro.articulos.form</field>
+        <field name="model">upoelectro.articulos</field>
+        <field name="arch" type="xml">
+            <form string="Articulos">
+                <sheet layout="auto">
+                    <notebook>
+                        <page name="informacion_producto" string="Informacion Producto">
+                            <field name="name"/>
+                            <field name="stock"/>   
+                            <field name="nombre"/>
+                            <field name="tipoProducto"/>  
+                            <field name="descripcion"/>  
+                            <field name="especificaciones"/>  
+                        </page>
+                        <page name="almacenes" string="Almacenes">
+                            <field name="almacenes_ids" widget="Many2many"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="upoelectro_articulos_tree_view" model="ir.ui.view">
+        <field name="name">upoelectro.articulos.tree</field>
+        <field name="model">upoelectro.articulos</field>
+        <field name="arch" type="xml">
+            <tree string="tree_string"> 
+                <field name="name"/>
+                <field name="stock"/>   
+                <field name="nombre"/>
+                <field name="tipoProducto"/>  
+                <field name="descripcion"/>  
+                <field name="especificaciones"/>            
+            </tree>
+        </field>
+    </record>
+
+    <record id="articulos_list_action" model="ir.actions.act_window">
+        <field name="name">Articulos</field>
+        <field name="res_model">upoelectro.articulos</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Crea un nuevo articulo</p>
+        </field>
+    </record>
+</odoo>
